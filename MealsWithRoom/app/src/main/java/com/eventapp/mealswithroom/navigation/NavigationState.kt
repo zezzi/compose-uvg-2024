@@ -1,4 +1,4 @@
-package com.eventapp.mealswithroom.ui.navigation
+package com.eventapp.mealswithroom.navigation
 
 sealed class NavigationState(val route: String) {
     data object MealsCategories: NavigationState("categories")

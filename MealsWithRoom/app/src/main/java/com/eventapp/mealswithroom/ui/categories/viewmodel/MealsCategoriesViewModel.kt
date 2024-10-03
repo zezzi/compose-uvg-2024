@@ -10,7 +10,7 @@ import com.eventapp.mealswithroom.ui.categories.repositories.MealsCategoryReposi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MealsCategoriesViewModel (private val repository: MealsCategoryRepository = MealsCategoryRepository()): ViewModel() {
+class MealsCategoriesViewModel(private val repository: MealsCategoryRepository = MealsCategoryRepository()): ViewModel() {
 
     val mealsState: MutableState<List<Categories>> =  mutableStateOf(emptyList<Categories>())
 

@@ -12,7 +12,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.eventapp.mealswithroom.ui.categories.viewmodel.MealsCategoriesViewModel
-import com.eventapp.mealswithroom.ui.navigation.AppBar
+import com.eventapp.mealswithroom.navigation.AppBar
 import com.eventapp.mealswithroom.ui.theme.MealsWithRoomTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

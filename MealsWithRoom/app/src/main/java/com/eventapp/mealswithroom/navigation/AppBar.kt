@@ -1,4 +1,4 @@
-package com.eventapp.mealswithroom.ui.navigation
+package com.eventapp.mealswithroom.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack

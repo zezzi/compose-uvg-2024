@@ -1,4 +1,4 @@
-package com.eventapp.mealswithroom.ui.navigation
+package com.eventapp.mealswithroom.navigation
 
 import androidx.navigation.NavController
 

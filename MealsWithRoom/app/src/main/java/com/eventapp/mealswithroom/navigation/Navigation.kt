@@ -1,18 +1,19 @@
-package com.eventapp.mealswithroom.ui.navigation
+package com.eventapp.mealswithroom.navigation
 
 import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.eventapp.mealswithroom.ui.categories.view.MealsCategoriesScreen
+import com.eventapp.mealswithroom.ui.meals.view.MealsFilterScreen
 
 @Composable
-fun Navigation(modifier: Modifier = Modifier) {
-    val navController = rememberNavController()
+fun Navigation(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(navController = navController,
         startDestination = NavigationState.MealsCategories.route,
         modifier = modifier) {
@@ -20,11 +21,17 @@ fun Navigation(modifier: Modifier = Modifier) {
         composable(route = NavigationState.MealsCategories.route) {
             MealsCategoriesScreen(navController = navController)
         }
-        composable(NavigationState.MealsRecipesList.route) {
-            // Screen of Details
+        composable(NavigationState.MealsRecipesList.route,
+            arguments = listOf(navArgument("category") {
+                type = NavType.StringType
+            })) { backStackEntry ->
+            val arguments = requireNotNull(backStackEntry.arguments)
+            val categoryName = arguments.getString("category") ?: ""
+            Log.d("ARGUMENTNAV", categoryName)
+            MealsFilterScreen(navController = navController, category = categoryName)
         }
         composable(route = NavigationState.Home.route) {
-            // Screen of Home
+            MealsFilterScreen(navController = navController, category = "Chicken")
         }
         composable(route = NavigationState.Profile.route) {
             //Screen of Profile
