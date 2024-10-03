@@ -71,6 +71,12 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:$room_version")
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // RETROFIT
+    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
