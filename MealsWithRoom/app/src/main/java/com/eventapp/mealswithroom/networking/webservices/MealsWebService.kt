@@ -1,5 +1,6 @@
-package com.eventapp.mealswithroom.networking
+package com.eventapp.mealswithroom.networking.webservices
 
+import com.eventapp.mealswithroom.networking.MealsApi
 import com.eventapp.mealswithroom.networking.response.categories.MealsCategoriesResponse
 import com.eventapp.mealswithroom.networking.response.meals.MealsResponse
 import retrofit2.Retrofit

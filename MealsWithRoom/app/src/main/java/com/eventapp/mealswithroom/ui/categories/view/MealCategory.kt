@@ -54,16 +54,16 @@ fun MealCategory(meal: Categories, navController: NavController) {
             ) {
                 Text(
                     text = stringResource(R.string.category_name),
-                    style = MaterialTheme.typography.displayMedium
+                    style = MaterialTheme.typography.titleSmall
                 )
                 Text(
                     text = meal.name ?: "",
-                    style = MaterialTheme.typography.displayMedium
+                    style = MaterialTheme.typography.bodySmall
                 )
                 HorizontalDivider()
                 Text(
                     text = stringResource(R.string.date_content, 11, 12),
-                    style = MaterialTheme.typography.displayMedium
+                    style = MaterialTheme.typography.bodySmall
                 )
             }
         }
