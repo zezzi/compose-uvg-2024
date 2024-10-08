@@ -6,6 +6,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -17,17 +19,20 @@ import com.eventapp.mealswithroom.ui.theme.MealsWithRoomTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MealsCategoriesScreen(navController: NavController) {
+fun MealsCategoriesScreen(navController: NavController,
+                          viewModel: MealsCategoriesViewModel = viewModel()) {
+    val categories = viewModel.categories.observeAsState(initial = emptyList())
 
-    val viewModel: MealsCategoriesViewModel = viewModel()
-    val meals = viewModel.mealsState.value
+    LaunchedEffect(Unit) {
+        viewModel.fetchCategories()
+    }
 
     Scaffold(topBar = {
         AppBar(title = "Recipes", navController = navController)
     }) {
         LazyColumn(contentPadding = PaddingValues(16.dp)) {
-            items(meals) { meal ->
-                MealCategory(meal, navController)
+            items(categories.value) { category ->
+                MealCategory(category, navController)
             }
         }
     }
