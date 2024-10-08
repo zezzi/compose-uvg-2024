@@ -22,21 +22,15 @@ class MealsCategoriesViewModel(private val repository: MealsCategoryRepository =
 
     fun fetchCategories() {
         _isLoading.value = true
-        Log.d("TAG_COROUTINES", "about to launch a coroutine")
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("TAG_COROUTINES", "launching a coroutine")
             try {
                 val meals = repository.getMealsCategories()
-                Log.d("TAG_COROUTINES", "we have received sync data")
                 _categories.postValue(meals)
             } catch (e: Exception) {
-                // Handle any errors here
                 e.printStackTrace()
             } finally {
-                // Set loading to false after data is fetched
                 _isLoading.postValue(false)
             }
         }
-        Log.d("TAG_COROUTINES", "other work")
     }
 }
