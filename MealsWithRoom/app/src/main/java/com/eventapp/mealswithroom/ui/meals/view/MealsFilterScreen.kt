@@ -61,13 +61,3 @@ fun MealsFilterScreen(navController: NavController, category: String) {
         }
     }
 }
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MealsWithRoomTheme {
-        MealsCategoriesScreen(navController = rememberNavController())
-    }
-}

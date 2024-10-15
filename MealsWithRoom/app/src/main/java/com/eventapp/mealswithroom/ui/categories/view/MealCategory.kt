@@ -20,12 +20,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.eventapp.mealswithroom.R
+import com.eventapp.mealswithroom.database.categories.MealCategoryEntity
 import com.eventapp.mealswithroom.networking.response.categories.Categories
 import com.eventapp.mealswithroom.navigation.NavigationState
 import com.eventapp.mealswithroom.navigation.navigateTo
 
 @Composable
-fun MealCategory(meal: Categories, navController: NavController) {
+fun MealCategory(meal: MealCategoryEntity, navController: NavController) {
     Card(
         shape = RoundedCornerShape(8.dp),
         modifier = Modifier
@@ -44,10 +45,10 @@ fun MealCategory(meal: Categories, navController: NavController) {
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
                     .padding(16.dp).clickable {
-                        meal.name?.let {
+                        if (meal.name.isNotEmpty()) {
                             navigateTo(
                                 navController,
-                                NavigationState.MealsRecipesList.createRoute(it)
+                                NavigationState.MealsRecipesList.createRoute(meal.name)
                             )
                         }
                     }
@@ -57,7 +58,7 @@ fun MealCategory(meal: Categories, navController: NavController) {
                     style = MaterialTheme.typography.titleSmall
                 )
                 Text(
-                    text = meal.name ?: "",
+                    text = meal.name,
                     style = MaterialTheme.typography.bodySmall
                 )
                 HorizontalDivider()
