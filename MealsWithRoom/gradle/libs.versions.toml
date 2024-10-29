@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.1"
+androidxJunit = "1.1.5"
 coreTesting = "2.2.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
@@ -11,12 +12,17 @@ activityCompose = "1.9.2"
 composeBom = "2024.04.01"
 mockitoCore = "4.11.0"
 mockwebserver = "4.9.1"
+runner = "1.5.2"
 runtimeLivedata = "1.7.2"
 firebaseDatabaseKtx = "21.0.0"
+uiTestJunit4 = "1.7.4"
+uiTestManifest = "1.7.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
+androidx-junit-v115 = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -34,6 +40,8 @@ androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtim
 firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockwebserver" }
+ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "uiTestJunit4" }
+ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifest" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
