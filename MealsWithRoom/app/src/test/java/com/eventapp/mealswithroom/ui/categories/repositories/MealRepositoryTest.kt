@@ -8,6 +8,7 @@ import com.eventapp.mealswithroom.networking.webservices.IMealsWebService
 import com.eventapp.mealswithroom.networking.webservices.MealsWebService
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotNull
+import junit.framework.TestCase.assertNull
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
