@@ -52,6 +52,7 @@ android {
 }
 
 dependencies {
+    implementation(":spotify-app-remote-release-0.8.0@aar")
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.firebase.database.ktx)
     val nav_version = "2.8.2"

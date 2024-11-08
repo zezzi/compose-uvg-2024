@@ -12,13 +12,15 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs("app/libs")
+        }
     }
 }
 
 rootProject.name = "MealsWithRoom"
 include(":app")
- 
