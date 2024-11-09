@@ -20,6 +20,12 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        manifestPlaceholders.putAll(
+            mapOf(
+                "redirectSchemeName" to "spotify-sdk",
+                "redirectHostName" to "auth"
+            )
+        )
     }
 
     buildTypes {
@@ -53,6 +59,7 @@ android {
 
 dependencies {
     implementation(":spotify-app-remote-release-0.8.0@aar")
+    implementation(":spotify-auth-release-2.1.0@aar")
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.firebase.database.ktx)
     val nav_version = "2.8.2"

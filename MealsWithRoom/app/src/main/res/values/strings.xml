@@ -1,6 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Meals App</string>
     <string name="category_name">Category Name</string>
     <string name="recepies_name">Recipes Name</string>
     <string name="date_content">Date %1$s Month %2$s day</string>
+    <string name="code" tools:ignore="MissingTranslation">Code: %1$s</string>
+    <string name="token" tools:ignore="MissingTranslation">Access Token: %1$s</string>
+    <string name="com_spotify_sdk_redirect_scheme" tools:ignore="MissingTranslation">spotify-sdk</string>
+    <string name="com_spotify_sdk_redirect_host" tools:ignore="MissingTranslation">auth</string>
 </resources>
